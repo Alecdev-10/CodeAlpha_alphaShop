@@ -1,0 +1,106 @@
+from .forms import RegisterForm
+
+
+
+
+
+
+
+Tu as sûrement remarqué ceci :
+
+{{ cartItemCount }}
+
+Il n'existe pas encore.
+
+Je ne vais pas le calculer dans toutes les vues.
+
+On va utiliser un context processor.
+
+
+
+
+
+
+⚠️ Petite configuration avant de coller ce fichier :
+
+Comme on va gérer des images produits, vérifie dans settings.py :
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+Et plus tard dans urls.py du projet on ajoutera la configuration des fichiers média.
+
+
+
+
+
+
+Je voudrais ajouter un dernier petit détail
+
+Je remplacerais le titre par défaut :
+
+Django Administration
+
+par
+
+AlphaShop Administration
+
+C'est plus professionnel.
+
+Ça se fait dans un tout petit fichier (admin.py ou apps.py) et ça prend 3 lignes.
+
+Je te le proposerai juste après urls.py, car ça fait partie des finitions. C'est le genre de détail qui donne un rendu plus "produit" que "projet scolaire".
+
+
+
+
+
+
+Je voudrais remplacer cette ligne :
+
+<img src="https://placehold.co/600x600?text=AlphaShop">
+
+par une vraie image locale :
+
+marketPlace/static/marketPlace/images/no-image.png
+
+Pourquoi ?
+
+fonctionne hors connexion
+plus professionnel
+pas de dépendance à un service externe
+meilleur pour GitHub
+
+Je te fournirai cette image (ou une façon simple de la créer) dans les finitions.
+
+
+
+
+Avant d'aller plus loin (login/register), je les note pour les intégrer à la fin sans casser le flux :
+
+Utiliser les slugs pour __str__ dans l'admin (optionnel).
+Créer un context_processor pour cartItemCount (tu m'as demandé de te le rappeler).
+
+
+
+
+
+Actuellement, si un champ contient une erreur, on affiche seulement le texte :
+
+<small class="text-danger">
+
+Je te propose d'ajouter dans style.css (dans les finitions) :
+
+.text-danger{
+    color:#dc2626;
+    font-size:.9rem;
+    margin-top:6px;
+    display:block;
+}
+
+Comme ça les erreurs seront bien visibles et cohérentes avec le reste du design.
+
+
+
+
+

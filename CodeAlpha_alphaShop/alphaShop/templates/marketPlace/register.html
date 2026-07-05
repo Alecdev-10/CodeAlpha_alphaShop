@@ -1,0 +1,78 @@
+{% extends 'marketPlace/base.html' %}
+
+{% block title %}
+Register | AlphaShop
+{% endblock %}
+
+{% block content %}
+
+<div class="form-container">
+
+    <h2 class="form-title">
+
+        Create Your Account
+
+    </h2>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {% for field in form %}
+
+            <div class="form-group">
+
+                <label>
+
+                    {{ field.label }}
+
+                </label>
+
+                {{ field }}
+
+                {% if field.errors %}
+
+                    <small class="text-danger">
+
+                        {{ field.errors|join:", " }}
+
+                    </small>
+
+                {% endif %}
+
+            </div>
+
+        {% endfor %}
+
+        <button
+            type="submit"
+            class="btn btn-primary w-100"
+        >
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            Create Account
+
+        </button>
+
+    </form>
+
+    <div class="form-footer">
+
+        <p>
+
+            Already have an account?
+
+            <a href="{% url 'login' %}">
+
+                Login here
+
+            </a>
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

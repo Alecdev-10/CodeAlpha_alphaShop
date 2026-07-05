@@ -1,19 +1,35 @@
-CodeAlpha_alphaShop/alphaShop/alphaShopEnv/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
 venv/
+alphaShopEnv/
 env/
 .venv/
 
-__pycache__/
-*.pyc
-*.pyo
+# Environment variables
+.env
 
-*.sqlite3
+# Database
 db.sqlite3
 
-.env
-*.env
-
+# Media uploads
 media/
-staticfiles/
-static/
 
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Logs
+*.log
+
+# */migrations/*
+*/migrations/__init__.py
