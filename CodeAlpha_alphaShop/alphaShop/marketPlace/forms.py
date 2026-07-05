@@ -18,42 +18,27 @@ class RegisterForm(UserCreationForm):
             "password2"
         )
 
-        widgets = {
-
-            "username": forms.TextInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Username"
-                }
-            ),
-
-            "email": forms.EmailInput(
-                attrs={
-                    "class": "form-control",
-                    "placeholder": "Email"
-                }
-            )
-
-        }
-
     def __init__(self, *args, **kwargs):
-
         super().__init__(*args, **kwargs)
 
-        self.fields["password1"].widget.attrs.update({
-
+        self.fields["username"].widget.attrs.update({
             "class": "form-control",
+            "placeholder": "Username"
+        })
 
+        self.fields["email"].widget.attrs.update({
+            "class": "form-control",
+            "placeholder": "Email"
+        })
+
+        self.fields["password1"].widget.attrs.update({
+            "class": "form-control",
             "placeholder": "Password"
-
         })
 
         self.fields["password2"].widget.attrs.update({
-
             "class": "form-control",
-
             "placeholder": "Confirm password"
-
         })
     
     def clean_email(self):
