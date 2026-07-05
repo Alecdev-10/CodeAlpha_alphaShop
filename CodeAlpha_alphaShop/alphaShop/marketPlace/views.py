@@ -470,10 +470,10 @@ def checkout(request):
 @login_required
 def orderList(request):
 
-    orders = Order.objects.filter(
-
-        user=request.user
-
+    orders = (
+        Order.objects
+        .filter(user=request.user)
+        .prefetch_related("items__product")
     )
 
     return render(

@@ -1118,3 +1118,127 @@ footer p{
     }
 
 }
+
+.order-card{
+
+    background:#fff;
+
+    border-radius:16px;
+
+    padding:24px;
+
+    margin-bottom:24px;
+
+    box-shadow:0 8px 24px rgba(0,0,0,.08);
+
+}
+
+.order-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+    padding-bottom:15px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.order-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #f2f2f2;
+
+}
+
+.order-item:last-child{
+
+    border-bottom:none;
+
+}
+
+.order-footer{
+
+    margin-top:20px;
+
+    padding-top:20px;
+
+    border-top:1px solid #eee;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    font-size:1.1rem;
+
+}
+
+.badge{
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+}
+
+.badge-success{
+
+    background:#d1fae5;
+
+    color:#065f46;
+
+}
+
+.badge-warning{
+
+    background:#fef3c7;
+
+    color:#92400e;
+
+}
+
+.badge-danger{
+
+    background:#fee2e2;
+
+    color:#991b1b;
+
+}
+
+.empty-state{
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+.empty-state h2{
+
+    margin-bottom:15px;
+
+}
+
+.empty-state p{
+
+    margin-bottom:25px;
+
+    color:#666;
+
+}
