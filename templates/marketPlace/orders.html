@@ -1,0 +1,153 @@
+{% extends "marketPlace/base.html" %}
+
+{% block title %}
+My Orders | AlphaShop
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="page-header">
+
+        <h1>My Orders</h1>
+
+        <p>View all your previous purchases.</p>
+
+    </div>
+
+    {% if orders %}
+
+        {% for order in orders %}
+
+            <div class="order-card">
+
+                <div class="order-header">
+
+                    <div>
+
+                        <h3>Order #{{ order.id }}</h3>
+
+                        <small>{{ order.createdAt|date:"d M Y - H:i" }}</small>
+
+                    </div>
+
+                    <div>
+
+                        {% if order.status == "PENDING" %}
+
+                            <span class="badge badge-warning">
+                                Pending
+                            </span>
+
+                        {% elif order.status == "PAID" %}
+
+                            <span class="badge badge-success">
+                                Paid
+                            </span>
+
+                        {% else %}
+
+                            <span class="badge badge-danger">
+                                Cancelled
+                            </span>
+
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+                <div class="order-items">
+
+                    {% for item in order.items.all %}
+
+                        <div class="order-item">
+
+                            <div>
+
+                                <strong>
+
+                                    {% if item.product %}
+                                        {{ item.product.name }}
+                                    {% else %}
+                                        Deleted Product
+                                    {% endif %}
+
+                                </strong>
+
+                                <br>
+
+                                <small>
+
+                                    Quantity:
+                                    {{ item.quantity }}
+
+                                </small>
+
+                            </div>
+
+                            <div class="text-end">
+
+                                <div>
+
+                                    ${{ item.price }}
+
+                                </div>
+
+                                <strong>
+
+                                    ${{ item.subtotal }}
+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="order-footer">
+
+                    <strong>
+
+                        Total :
+                        ${{ order.total }}
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty-state">
+
+            <h2>No orders yet</h2>
+
+            <p>
+
+                You haven't placed any orders yet.
+
+            </p>
+
+            <a
+                href="{% url 'product_list' %}"
+                class="btn btn-primary">
+
+                Continue Shopping
+
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
