@@ -30,6 +30,3 @@ Thumbs.db
 
 # Logs
 *.log
-
-# */migrations/*
-*/migrations/__init__.py
