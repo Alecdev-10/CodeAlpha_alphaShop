@@ -36,7 +36,7 @@ This project was developed to practice backend development with Django and build
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/AlphaShop.git
+git clone https://github.com/Alecdev-10/AlphaShop.git
 ```
 
 Create a virtual environment:
@@ -76,15 +76,17 @@ http://127.0.0.1:8000/
 ## Project Structure
 
 ```
-marketPlace/
-├── models.py
-├── views.py
-├── urls.py
-├── forms.py
-├── admin.py
+CodeAlpha_alphaShop/
+├── alphaShop/
+├── marketPlace/
+    ├── models.py
+    ├── views.py
+    ├── urls.py
+    ├── forms.py
+    ├── admin.py
+    ├── static/
+    ├── context_processors.py
 ├── templates/
-├── static/
-├── context_processors.py
 ```
 
 ---
